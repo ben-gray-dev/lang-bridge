@@ -1,0 +1,130 @@
+mat-card#head {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    background-color: #424242;
+    box-shadow: 5px 10px #32a6a8;
+
+    span, mat-icon {
+        font-size: 3vh;
+        opacity: 0.8;
+        color: white;
+    }
+
+    input {
+        font-size: 3vh;
+        background-color: darkgray;   
+    }
+
+    .correct {
+        background-color: green;
+    }
+
+    div#sentenceContainer {
+        display: inline;
+        text-align: center;
+        width: 100%;
+        height: 20vh;
+    }
+}
+
+div.cardComponent {
+    width: 90%;
+    display: flex;
+    margin: auto;
+}
+
+div#bottomIconContainer {
+    width: 100%;
+
+    .bottomIcon {
+        padding: 10px;
+        padding-bottom: 0;
+    }
+}
+
+[hidden] {
+    display: none !important;
+}
+
+
+
+div#exampleSentenceWrapper {
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+}
+
+div#translatedSentence {
+    margin-top: 1vh;
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    height: 10vh;
+  
+}
+
+div#translationWrapper {
+    display: flex;
+    margin: auto;
+    text-align: center;
+    span {
+        font-size: 2vh;
+    }
+}
+
+div#translationPartition {
+    margin: 0;
+}
+
+#iconSpacer {
+    flex: 1 1 auto;
+}
+
+mat-form-field#answerBox {
+    height: 4vh;
+    margin: 0;
+    border: none;
+}
+
+mat-divider {
+    border-color: white;
+}
+
+
+
+::ng-deep .mat-form-field-infix {
+    border: 0 !important;
+}
+
+
+.editable
+{
+    position: relative;
+    padding: 0 !important;
+    padding: 3px;
+    background-color: transparent !important;
+}
+
+.editable > input
+{
+    position: relative;
+    z-index: 1;
+    border: none;
+    background-color: transparent !important;
+    box-shadow: none;
+    width: 90%;
+}
+
+.editable::after
+{
+    padding-top: 10px !important;
+    padding-bottom: 0 !important;
+    position: absolute;
+    left: 0px;
+    top: 5px;
+    font-family: Strait;
+    content: attr(data-placeholder);
+    pointer-events: none;
+    opacity: 0.5;
+    z-index: 1;
+}

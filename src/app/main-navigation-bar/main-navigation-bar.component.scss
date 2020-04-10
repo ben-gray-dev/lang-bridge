@@ -1,0 +1,88 @@
+#navBar {
+    position: fixed !important;
+    width: 100%;
+    height: 4vh;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    margin-top: 0;
+    z-index: 1000;
+}
+
+
+img {
+    display: flex;
+    height: calc( 4vh - 1em);
+    width: max(10vw, 130px);
+    margin: auto;
+    min-height: 20px;
+}
+
+span#logo {
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+    
+}
+
+span#spacer {
+    flex: 1 1 auto;
+}
+
+span#loginSpace {
+    display: flex;
+    flex-direction: row;
+    width: max(5vw, 70px);
+    margin-left: 0.7vw;
+    margin-right: 0.7vw;
+  
+}
+
+span.icon, a.icon {
+    display: flex;
+    flex-direction: row;
+    width: max(2vw, 40px);
+    margin: auto;
+    text-decoration: none;
+
+    // span.flag-icon {
+    //     width: max(2vw, 40px);
+    //     height: max(2vh, 10px)
+    // }
+
+    a, span {
+        display: flex;
+        flex-direction: row;
+        margin: auto;
+        color: white;
+        text-decoration: none;
+        i {
+            font-size: 2vh;
+        }
+    }
+    
+}
+
+span#loginButton {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 65%;
+    margin: auto;
+    border: .2vh #e1b0e8 solid;
+    border-radius: 10px;
+    color: white;
+}
+
+a#loginButtonText {
+    display: flex;
+    height: 60%;
+    margin: auto;
+    color: white;
+    font-size: 1.5vh;
+    text-decoration: none;
+}
+
+i {
+    font-size: 2vh;
+}

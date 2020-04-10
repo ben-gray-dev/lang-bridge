@@ -1,0 +1,105 @@
+<div id="loginContainer">
+    <div class="taskGroup">
+        <mat-card id="title">
+            <mat-card id="innerTitle">
+                <div id="titleText">
+                    <span i18n="@@BECOME_BRIDGE_BUILDER">Become a Bridge Builder</span>
+                </div>
+            </mat-card>
+        </mat-card>
+        <mat-card id="loginCard">
+            <div id="formContainer">
+                <form id="contactForm" [formGroup]="logInFormCtl" (ngSubmit)="onSubmit(logInFormCtl.value)">
+                    <div>
+                        <mat-form-field id="nameinput" class="email-form-option" appearance="outline">
+                            <mat-label i18n="@@NAME">Name</mat-label>
+                            <input matInput spellcheck="false" formControlName="name" autocomplete="off">
+                            <mat-error i18n="@@NAME_REQUIRED_FIELD">
+                                Name is a required field.
+                            </mat-error>
+                        </mat-form-field>
+
+                    </div>
+
+                    <div>
+                        <mat-form-field id="emailinput" class="email-form-option" appearance="outline">
+                            <mat-label i18n="@@EMAIL">Email</mat-label>
+                            <input matInput spellcheck="false" formControlName="email" autocomplete="off">
+                            <mat-placeholder class="placeholder" i18n="@@EMAIL">Email</mat-placeholder>
+                            <mat-error *ngIf="logInFormCtl.get('email').hasError('email')" i18n="@@INVALID_EMAIL_WARNING">
+                                Please enter a valid email address.
+                            </mat-error>
+                            <mat-error *ngIf="logInFormCtl.get('email').hasError('required')" i18n="@@EMAIL_REQUIRED_FIELD">
+                                Email is a required field.
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        <mat-form-field id="passwordInput" class="email-form-option" appearance="outline">
+                            <mat-label i18n="@@PASSWORD">Password</mat-label>
+                            <input matInput spellcheck="false" formControlName="password" autocomplete="off"
+                                type="password">
+                            <mat-placeholder class="placeholder">Password</mat-placeholder>
+                            <mat-error *ngIf="logInFormCtl.get('password').hasError('tooShort')" i18n="@@PASSWORD_LENGTH_ERR">
+                                Password must be at least 8 characters long.
+                            </mat-error>
+                            <mat-error *ngIf="logInFormCtl.get('password').hasError('missingUpper')" i18n="@@PASSWORD_UPPER_ERR">
+                                Password must contain at least 1 uppercase character.
+                            </mat-error>
+                            <mat-error *ngIf="logInFormCtl.get('password').hasError('missingLower')" i18n="@@PASSWORD_LOWER_ERR">
+                                Password must contain at least 1 lowercase character.
+                            </mat-error>
+                            <mat-error *ngIf="logInFormCtl.get('password').hasError('missingNumber')" i18n="@@PASSWORD_NUM_ERR">
+                                Password must contain at least 1 number.
+                            </mat-error>
+                            <mat-error *ngIf="logInFormCtl.get('password').hasError('required')" i18n="@@PASSWORD_REQUIRED_FIELD">
+                                Password is a required field.
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        <mat-form-field id="confirmPassInput" class="email-form-option" appearance="outline">
+                            <mat-label i18n="@@CONFIRM_PASSWORD">Confirm password</mat-label>
+                            <input matInput spellcheck="false" formControlName="confirmPass" autocomplete="off"
+                                type="password" [errorStateMatcher]="matcher">
+                            <mat-placeholder class="placeholder" i18n="@@CONFIRM_PASSWORD">Confirm password</mat-placeholder>
+                            <mat-error *ngIf="logInFormCtl.hasError('notSame')" i18n="@@PASSWORD_MATCH_ERR">
+                                Passwords do not match.
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div id="tos">
+                        <mat-checkbox formControlName="termsOfService" i18n="@@READ_TERMS_OF_SERVICE">I have read and agree to the <a
+                                href="terms-of-service">terms of service</a> </mat-checkbox>
+
+                    </div>
+
+
+                    <div class="formLine" id="captchaWrapper">
+                        <re-captcha #captchaRef (resolved)="resolved($event)" formControlName="recaptchaReactive"
+                            siteKey="6LeRdf0UAAAAAPr42wPeR7wZkAeAejNjTyjwJRAo">
+                        </re-captcha>
+                    </div>
+                </form>
+            </div>
+        </mat-card>
+        <mat-card id="submission">
+            <button mat-button (click)="onSubmit(logInFormCtl.value)" [disabled]="registerDisabled" i18n="@@SUBMIT">Submit</button>
+        </mat-card>
+        <div id="messageContainer">
+            <span id="message" *ngIf="resultMessage">
+                {{ resultMessage }}
+            </span>
+
+        </div>
+        <div id="redirectLogin" class="formLine">
+            <span id="message">
+                <a href="login" i18n="@@ALREADY_HAVE_ACCOUNT">Already have an account? Login</a>
+            </span>
+        </div>
+    </div>
+
+    <mat-card *ngIf="signUp">
+
+    </mat-card>
+</div>

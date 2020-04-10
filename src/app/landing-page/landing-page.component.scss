@@ -1,0 +1,344 @@
+@import '~compass-mixins/lib/compass/css3';
+
+div#missionWrapper {
+    height: 3vh;
+}
+
+[hidden] {
+    display: none !important;
+  }
+
+mat-card.section-title {
+    margin-top: 10vh;
+    height: 3vh;
+    width: max(10vw, 170px);
+    color: white;
+    background-color: #e1b0e8;
+    font-size: 3vh;
+    font-family: 'Strait';
+}
+
+mat-card#algorithm {
+    width: max(10vw, 380px);
+}
+mat-card#langs {
+    width: max(10vw, 270px);
+    margin-top: 5vh;
+}
+mat-card.section-body {
+    margin-top: 10vh;
+    width: max(40vw, 500px);
+    color: white;
+    background-color: #424242;
+    box-shadow: 5px 10px #32a6a8;
+    font-size: 3vh;
+    font-family: 'Strait';
+}
+
+mat-card.listed-item {
+    display: flex;
+    margin: auto;
+    background-color: #424242;
+    box-shadow: 5px 10px #32a6a8;
+    height: 30vh;
+    width: max(15vw, 350px);
+}
+
+mat-card.title {
+    width: max(10vw, 300px);
+}
+
+mat-card.left {
+    margin-left: -1vw;
+    text-align: right;
+}
+mat-card.right {
+    // margin-right: -1vw;
+    text-align: left;
+}
+mat-card.body-center {
+    margin: auto;
+    margin-top: 10vh;
+}
+
+mat-card#mission {
+    width: max(10vw, 270px)
+}
+
+div#algorithmWrapper {
+    margin-top: 10vh;
+    display: flex;
+    flex-direction: row;
+}
+
+div#langScrollTarget {
+    height: 0vh;
+    display: flex;
+
+}
+
+div#langSpacer {
+    height: 15vh;
+}
+
+div#verticalAlgorithmTitleWrapper {
+    width: 80%;
+    
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+div#algorithmTitleWrapper  {
+    width: max(80%, 1300px);
+    
+    display: flex;
+    margin: auto;
+}
+
+div#topLevelAlgorithmContainer {
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    width: max(80%, 1300px);
+}
+
+div#mainAlgContainer {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 10vh;
+}
+
+div#algorithmBodyWrapper {
+    width: 100%;
+    
+    display: flex;
+    margin: auto;
+}
+
+div.horizontalList {
+    flex-direction: row;
+    height: 40vh;
+}
+
+div.verticalList {
+    mat-card {
+        width: 80%;
+    }
+    flex-direction: column;
+    height: 100vh;
+}
+
+div.horizontalContainer {
+    height: 40vh;
+}
+
+div.verticalContainer {
+    height: 100vh;
+}
+
+span.rightSideSpacer {
+    width: 90vw;
+}
+
+#invisibleTrigger {
+    display: none
+}
+
+
+
+
+.grayBackground {
+    height: 100vh;
+    background: url('./../../assets/bridge.jpg') no-repeat center center fixed;
+    opacity: 0.7;
+    filter: grayscale(50%);
+    transform: translate3d(0,0,0);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    z-index: 0;
+}
+
+
+div.verticalInfo {
+    margin-bottom: 10vh;
+}
+div.horizontalInfo {
+    margin-bottom: 10vh;
+}
+
+
+
+div#topSpacer {
+    height: 15vh;
+}
+
+div#postLogoSpacer {
+    height: 3vh;
+}
+
+div#title {
+   width: 90%;
+   position: absolute;
+   left: 0;
+   top: 0;
+   right: 50;
+   height: 100vh;
+   // margin-left: 10%;
+   margin-right: 10%;
+   text-align: right;
+   h1, h3 {
+       color: white;
+       margin-top: 0;
+   }
+}
+
+.mat-raised-button {
+   color: white;
+   background-color: #32a6a8;
+}
+
+.underlined {
+    font-weight: bold;
+    color: #e1b0e8;
+    opacity: 1 !important;
+    text-decoration: underline;
+    
+}
+
+div.section-content {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+
+    mat-divider {
+        position: relative;
+        display: flex;
+        margin: auto;
+        width: 100%;
+        border-color: white;
+    }
+}
+
+
+div.section-icon {
+    display: flex;
+    margin: auto;
+    font-size: 10vh;
+    color: #e1b0e8;
+    height: 40%;
+}
+
+div.section-text {
+    display: flex;
+    margin: auto;
+    height: 40%;
+    color: white;
+    text-align: center;
+}
+
+
+
+
+.container {
+  margin: auto !important;
+  margin-top: 5vh !important;
+  margin-right: 0 !important;
+  width: 150px;
+  -webkit-perspective: 1000;
+  -webkit-backface-visibility: hidden;
+}
+
+.pulse-button {
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: 150px;
+  height: 50px;
+  font-size: 1em;
+  text-align: center;
+  line-height: 50px;
+  letter-spacing: -1px;
+  color: white;
+  border: none;
+  border-radius: 5%;
+  background: #32a6a8;
+  cursor: pointer;
+  box-shadow: 0 0 0 0 rgba(#32a6a8, .5);
+  -webkit-animation: pulse 1.5s infinite;
+}
+.pulse-button:hover {
+  -webkit-animation: none;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    @include transform(scale(.9));
+  }
+  70% {
+    @include transform(scale(1));
+    box-shadow: 0 0 0 50px rgba(#5a99d4, 0);
+  }
+    100% {
+    @include transform(scale(.9));
+    box-shadow: 0 0 0 0 rgba(#5a99d4, 0);
+  }
+}
+
+
+div#langSlideShowContainer {
+    height: 70vh;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    margin-top: 5vh;
+}
+
+div#slideShowWrapper {
+    display: flex;
+    margin: auto;
+    height: 100%;
+    width: 100%;
+}
+
+slideshow {
+    height: 100%;
+    width: 100%;
+}
+
+#langOptionsFlagsContainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 10vh;
+    margin: auto;
+    margin-top: 2vh;
+}
+
+#flagWrapper {
+    display: flex;
+    margin: auto;
+}
+
+
+span.add-lang, span.flag-icon {
+    margin: 1vh;
+    font-size: max(2vh, 38px);
+    border-radius: 1em;
+    opacity: 0.4;
+    filter: grayscale(.2)
+}
+
+span.selected-flag {
+    opacity: 1;
+}
+
+mat-card.title {
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}

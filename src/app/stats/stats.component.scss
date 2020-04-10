@@ -1,0 +1,44 @@
+* {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+}
+
+
+div#root {
+    height: 100vh; 
+}
+
+div.centerPanel {
+    flex-direction: column;
+    width: 90%;
+    height: 100vh;
+
+    ::ng-deep .mat-progress-spinner circle, .mat-spinner circle {
+        stroke: #e1b0e8;
+    }
+}
+
+div#sidePanel, div#rightSidePanel {
+    width: 10%;
+    height: 100vh;
+    flex-direction: column;
+
+    span.flag-icon {
+        margin: 1vh;
+        font-size: max(2vw, 38px);
+        border-radius: 1em;
+        opacity: 0.4;
+        filter: grayscale(.2)
+    }
+
+    span.selected-flag {
+        opacity: 1;
+        filter: grayscale(0)
+    }
+
+    div#langListWrapper {
+        margin-top: 10vh;
+        flex-direction: column;
+    }
+}

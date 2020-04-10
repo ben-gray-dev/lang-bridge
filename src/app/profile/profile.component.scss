@@ -1,0 +1,176 @@
+div#profileCardContainer {
+    height: 100vh;
+}
+
+div#loadingSpinner {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+}
+
+mat-spinner {
+    display: flex;
+    margin: auto;
+}
+
+::ng-deep .mat-progress-spinner circle, .mat-spinner circle {
+    stroke: #e1b0e8;
+}
+
+div#messageContainer {
+    height: 5vh;
+}
+
+div#profileCardContainer, div#parent, div#messageContainer {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+div.message {
+    display: flex;
+    margin: auto;
+}
+
+div#statusMessage {
+    color: green;
+}
+
+div#errorMessage {
+    color: red;
+}
+
+
+mat-card#title {
+    display: flex;
+    margin: auto;
+    margin-bottom: 2vh;
+    width: max(25vw, 400px);
+    height: 6vh;
+}
+
+mat-card#innerTitle {
+    background-color: white;
+    color: #424242;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    width: 90%;
+    height: 80%;
+
+    div#titleText {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        margin: auto;
+
+        span {
+            font-size: 2.5vh;
+        }
+    }
+
+    * {
+        display: flex;
+        flex-direction: row;
+        margin: auto;
+    }
+}
+
+
+mat-card#submission {
+    display: flex;
+    margin: auto;
+    margin-top: 2vh;
+    width: 30%;
+    height: 5vh;
+
+    button {
+        width: 100%;
+        height: 100%;
+        color: white;
+        font-size: 2.5vh;
+        background-color: #424242;
+        border: none;
+    }
+
+    button:disabled {
+        color: #999;
+        opacity: 0.2;
+    }
+}
+
+mat-card {
+    color: white;
+    background-color: #424242;
+    display: flex;
+    flex-direction: column;
+}
+
+mat-card#form {
+    width: max(30vw, 500px);
+    margin: auto;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    mat-form-field {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        width: 90%;
+    }
+
+    span {
+        color: white;
+    }
+}
+
+::ng-deep .mat-form-field-appearance-outline.mat-form-field-disabled .mat-form-field-outline {
+    color: white !important;
+}
+
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: white;
+  }
+  
+::ng-deep .mat-form-field-invalid {
+    border-color: white !important;
+}
+
+/* Font color */
+mat-label {
+    color: white;
+  }
+
+::ng-deep input {
+    caret-color: white !important;
+}
+
+::ng-deep .mat-input-element:disabled {
+    color: white !important;
+}
+
+::ng-deep .mat-form-field-label .mat-form-field-invalid {
+    /*change color of label*/
+    color: white !important;
+   }
+  
+   ::ng-deep.mat-form-field-underline  {
+    /*change color of underline*/
+    background-color: white !important;
+  } 
+  
+  ::ng-deep.mat-form-field-ripple {
+   /*change color of underline when focused*/
+   background-color: white !important;;
+  }
+
+  ::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+    color: #e1b0e8!important;
+    caret-color: white;
+}
+
+::placeholder {
+    color: white;
+}

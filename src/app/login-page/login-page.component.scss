@@ -1,0 +1,230 @@
+div#loginContainer {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    
+
+}
+
+mat-checkbox {
+    a {
+        color: white;
+    }
+}
+
+div#captchaWrapper {
+    margin-top: 2vh !important;
+}
+
+::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-ripple .mat-ripple-element {
+    opacity: 0.03 !important;
+    background-color: #e1b0e8!important;
+  }
+  ::ng-deep .mat-checkbox .mat-checkbox-frame {
+    border-color: white;
+  }
+
+
+::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background,.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+    background-color: #e1b0e8;
+  }
+
+mat-card#loginCard {
+    display: flex;
+    background-color: #424242;
+    border-radius: 1em;
+    color: white;
+    width: 30vw;
+    margin: auto;
+    font-size: 1.75vh;
+}
+
+div.taskGroup {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+
+    mat-divider {
+        padding: 10px;
+        display: flex;
+        width: 20vw;
+        margin: auto;
+        border-color: white;
+    }
+
+    div.formTitle {
+        display: flex;
+        margin: auto;
+        font-size: 2vw;
+        color: white;
+    }
+
+    mat-error {
+        display: flex;
+        font-size: 1.5vh;
+        margin: auto;
+    }
+}
+
+
+
+div#formContainer {
+    display: flex;
+    flex-direction: column;
+    height: 70%;
+    width: 90%;
+    margin: auto;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        mat-form-field {
+            width: 100%;
+        }
+
+        div.formLine {
+            display: flex;
+            flex-direction: row;
+            margin: auto;
+            span, a {
+                color: white;
+                display: flex;
+                margin: auto;
+            }
+            span#message {
+                color: red;
+            }
+        }
+
+
+        button {
+            display: flex;
+            color: white;
+            width: 10vw;
+            margin: auto;
+            justify-content: center;
+            font-size: 2.5vh;
+        }
+    }
+    
+}
+
+#redirectLogin {
+    span, a {
+        color: white;
+        display: flex;
+        margin: auto;
+    }
+}
+
+mat-card#submission {
+    display: flex;
+    margin: auto;
+    margin-top: 2vh;
+    width: 30%;
+    height: 5vh;
+    background-color: #424242;  
+    flex-direction: column;
+
+    button {
+        width: 100%;
+        height: 100%;
+        color: white;
+        font-size: 2.5vh;
+        background-color: #424242;
+        border: none;
+    }
+
+    button:disabled {
+        color: #999;
+        opacity: 0.2;
+    }
+}
+
+
+#messageContainer {
+    height: 4vh;
+    margin-top: 2vh;
+    color: #bf0000;
+    text-align: center;
+}
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: white;
+  }
+  
+::ng-deep .mat-form-field-invalid {
+    border-color: white !important;
+}
+
+/* Font color */
+mat-label {
+    color: white;
+  }
+
+::ng-deep .mat-form-field-label .mat-form-field-invalid {
+    /*change color of label*/
+    color: white !important;
+   }
+  
+   ::ng-deep.mat-form-field-underline  {
+    /*change color of underline*/
+    background-color: white !important;
+  } 
+  
+  ::ng-deep.mat-form-field-ripple {
+   /*change color of underline when focused*/
+   background-color: white !important;;
+  }
+
+  ::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+    color: #e1b0e8!important;
+}
+
+
+
+::placeholder {
+    color: white;
+}
+
+::ng-deep input {
+    caret-color: white !important;
+}
+
+
+mat-card#title {
+    display: flex;
+    margin: auto;
+    margin-bottom: 2vh;
+    width: max(25vw, 400px);
+    height: 6vh;
+    background-color: #424242;  
+    flex-direction: column;
+}
+
+mat-card#innerTitle {
+    background-color: white;
+    color: #424242;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    width: 90%;
+    height: 80%;
+
+    div#titleText {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        margin: auto;
+
+        span {
+            font-size: 2.5vh;
+        }
+    }
+
+    * {
+        display: flex;
+        flex-direction: row;
+        margin: auto;
+    }
+}

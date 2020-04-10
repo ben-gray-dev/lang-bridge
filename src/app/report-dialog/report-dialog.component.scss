@@ -1,0 +1,17 @@
+* {
+    font-family: 'Strait';
+}
+
+mat-dialog-content {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+
+    button {
+        margin: 10px !important;
+        display: flex;
+        margin: auto;
+        color: white;
+        background-color: #32a6a8;
+    }
+}

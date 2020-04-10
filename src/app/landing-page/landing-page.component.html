@@ -1,0 +1,222 @@
+<div id="mainWrapper" class="grayBackground">
+
+</div>
+<div id="title" class="animated fadeIn">
+    <div id="topSpacer">
+
+    </div>
+    <img src="./../../assets/contrastTitle.png">
+    <div id="postLogoSpacer">
+
+    </div>
+    <div>
+        <h1 i18n>Language learning
+            <span tooltip="{{optimizedToolTipText}}">
+                <span class="underlined" (click)="showAlgorithm()">optimized</span>
+            </span> to fit your busy schedule.
+        </h1>
+    </div>
+    <div id="subtitle">
+        <h3 i18n>Building bridges between
+            <span tooltip="{{langsToolTipText}}" [options]="{placement: 'bottom'}">
+                <span class="underlined" (click)="showLangs()">languages</span>
+            </span> and communities.
+        </h3>
+    </div>
+    <div class='container' (click)="startLearning()">
+        <span class='pulse-button' i18n>Start Learning</span>
+    </div>
+</div>
+<div id="otherInfo" [ngClass]="verticalDisplay ? 'verticalInfo' : 'horizontalInfo'">
+    <div id="missionWrapper" class="animated" animateOnScroll animationName="fadeInLeft" offset="0">
+        <mat-card id="mission" class="left section-title" i18n>
+            Our Mission
+        </mat-card>
+    </div>
+    <div id="missionBodyWrapper" class="animated" animateOnScroll animationName="bounce">
+        <mat-card class="body-center section-body">
+            <div class="section-text" i18n="@@MISSION_STATEMENT">LangBridge seeks to promote bridge-building between linguistic communities by
+                empowering language learners of all backgrounds especially those from vulnerable,
+                linguistically-isolated populations in the United States.</div>
+        </mat-card>
+    </div>
+    <div id="algorithmWrapper" class="animated" animateOnScroll animationName="fadeInRight" offset="0">
+        <span class="rightSideSpacer">
+
+        </span>
+        <mat-card id="algorithm" class="right section-title" i18n>
+            Our Algorithm
+        </mat-card>
+    </div>
+    <div id="mainAlgContainer" [hidden]="verticalDisplay">
+        <div id="algorithmTitleWrapper" class="animated" animateOnScroll animationName="fadeInLeft">
+            <mat-card class="title">
+                <mat-card class="innerTitle">
+                    <div class="titleText">
+                        <span i18n="@@PARETO_PRINCIPLE">Pareto Principle</span>
+                    </div>
+                </mat-card>
+            </mat-card>
+            <mat-card class="title">
+                <mat-card class="innerTitle">
+                    <div class="titleText">
+                        <span i18n="@@SPACED_REPETITION">Spaced Repetition</span>
+                    </div>
+                </mat-card>
+            </mat-card>
+            <mat-card class="title">
+                <mat-card class="innerTitle">
+                    <div class="titleText">
+                        <span i18n="@@MACHINE_LEARNING">Machine Learning</span>
+                    </div>
+                </mat-card>
+            </mat-card>
+        </div>
+        <div id="topLevelAlgorithmContainer" class="horizontalContainer"
+            class="animated" animateOnScroll animationName="bounceInUp">
+            <div id="algorithmBodyWrapper" class="horizontalList">
+                <mat-card class="listed-item">
+                    <div class="section-content">
+                        <div class="section-icon">
+                            <i class="far fa-chart-bar"></i>
+                        </div>
+                        <mat-divider></mat-divider>
+                        
+                        <div class="section-text" i18n="@@PARETO_PRINCIPLE_DESC">The Pareto Principle states that 20% of the effort equates to 80% of
+                            the results. By teaching the most frequent words, we maximize percent recognition of new
+                            speech. For example, by learning the first 1000 most common words in the English language,
+                            one can understand 80% of spoken English!</div>
+                    </div>
+                </mat-card>
+                <mat-card class="listed-item">
+                    <div class="section-content">
+                        <div class="section-icon">
+                            <i class="far fa-clock"></i>
+                        </div>
+                        <mat-divider></mat-divider>
+                        <div class="section-text" i18n="@@SPACED_REPETITION_DESC">Several studies have confirmed that memory retention is optimized by
+                            increasingly long intervals for repetition of concepts. Given the ease with which you answer
+                            each prompt, we determine when that term be reviewed in a different context.</div>
+                    </div>
+                </mat-card>
+                <mat-card class="listed-item">
+                    <div class="section-content">
+                        <div class="section-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <mat-divider></mat-divider>
+                        <div class="section-text" i18n="@@MACHINE_LEARNING_DESC">Based upon your learning habits, we use machine learning to adapt a
+                            personalized study schedule which maximizes recall.</div>
+                    </div>
+
+                </mat-card>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="mainAlgContainer" [hidden]="!verticalDisplay">
+        <div id="verticalAlgorithmTitleWrapper">
+            <mat-card class="title animated" animateOnScroll animationName="fadeInLeft">
+                <mat-card class="innerTitle">
+                    <div class="titleText">
+                        <span i18n="@@PARETO_PRINCIPLE">Pareto Principle</span>
+                    </div>
+                </mat-card>
+            </mat-card>
+            <mat-card class="listed-item animated" animateOnScroll animationName="fadeInRight">
+                <div class="section-content">
+                    <div class="section-icon">
+                        <i class="far fa-chart-bar"></i>
+                    </div>
+                    <mat-divider></mat-divider>
+                    <div class="section-text" i18n="@@PARETO_PRINCIPLE_DESC">The Pareto Principle states that 20% of the effort equates to 80% of
+                        the results. By teaching the most frequent words, we maximize percent recognition of new
+                        speech. For example, by learning the first 1000 most common words in the English language,
+                        one can understand 80% of spoken English!</div>
+                </div>
+            </mat-card>
+            <mat-card class="title animated" animateOnScroll animationName="fadeInLeft">
+                <mat-card class="innerTitle">
+                    <div class="titleText">
+                        <span i18n="@@SPACED_REPETITION">Spaced Repetition</span>
+                    </div>
+                </mat-card>
+            </mat-card>
+            <mat-card class="listed-item animated" animateOnScroll animationName="fadeInRight">
+                <div class="section-content">
+                    <div class="section-icon">
+                        <i class="far fa-clock"></i>
+                    </div>
+                    <mat-divider></mat-divider>
+                    <div class="section-text" i18n="@@SPACED_REPETITION_DESC">Several studies have confirmed that memory retention is optimized by
+                        increasingly long intervals for repetition of concepts. Given the ease with which you answer
+                        each prompt, we determine when that term be reviewed in a different context.</div>
+                </div>
+            </mat-card>
+            <mat-card class="title animated" animateOnScroll animationName="fadeInLeft">
+                <mat-card class="innerTitle">
+                    <div class="titleText">
+                        <span i18n="@@MACHINE_LEARNING">Machine Learning</span>
+                    </div>
+                </mat-card>
+            </mat-card>
+            <mat-card class="listed-item animated" animateOnScroll animationName="fadeInRight">
+                <div class="section-content">
+                    <div class="section-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <mat-divider></mat-divider>
+                    <div class="section-text" i18n="@@MACHINE_LEARNING_DESC">Based upon your learning habits, we use machine learning to adapt a
+                        personalized study schedule which maximizes recall.</div>
+                </div>
+
+            </mat-card>
+        </div>
+    </div>
+    <div id="langSpacer">
+
+    </div>
+    <div id="langScrollTarget">
+
+    </div>
+    <div id="languageWrapper" class="animated" animateOnScroll animationName="fadeInLeft" offset="0">
+        <mat-card id="langs" class="left section-title" i18n>
+            Our Languages
+        </mat-card>
+    </div>
+
+    <div id="langSlideShowContainer" class="animated" animateOnScroll animationName="fadeIn">
+        <div id="slideShowWrapper">
+            <slideshow #slideshow [imageUrls]="imageUrlArray" [autoPlay]="imageUrlArray.length > 1" [showArrows]="false"
+                (onIndexChanged)="slideShowIndexChanged($event)"></slideshow>
+        </div>
+    </div>
+    <div id="langOptionsFlagsContainer">
+        <div id="flagWrapper">
+            <span *ngIf="isSpanishLocalized" class="flag-icon flag-icon-us selected-flag"
+                tooltip="<h2>English</h2><div>Inglés</div>"
+                [options]="{placement: 'bottom'}"></span>
+            <span *ngIf="isEnglishLocalized" class="flag-icon flag-icon-es" [ngClass]="spanishSelected ? 'selected-flag': ''"
+                (click)="switchToSpanish()" tooltip="<h2>Español</h2><div>Spanish</div>"
+                [options]="{placement: 'bottom'}"></span>
+            <span *ngIf="isEnglishLocalized"  class="flag-icon flag-icon-br" [ngClass]="portugueseSelected ? 'selected-flag': ''"
+                (click)="switchToPortuguese()" tooltip="<h2>Português</h2><div>Portuguese</div>"
+                [options]="{placement: 'bottom'}"></span>
+            <span *ngIf="isEnglishLocalized"  class="flag-icon flag-icon-ir" [ngClass]="persianSelected ? 'selected-flag': ''"
+                (click)="switchToPersian()" tooltip="<h2>فارسی</h2><div>Persian</div>"
+                [options]="{placement: 'bottom'}"></span>
+            <span *ngIf="isEnglishLocalized"  class="flag-icon flag-icon-fr" [ngClass]="frenchSelected ? 'selected-flag': ''"
+                (click)="switchToFrench()" tooltip="<h2>Français</h2><div>French</div>"
+                [options]="{placement: 'bottom'}"></span>
+            <span *ngIf="isEnglishLocalized"  class="flag-icon flag-icon-ge" [ngClass]="georgianSelected ? 'selected-flag': ''"
+                (click)="switchToGeorgian()" tooltip="<h2>ქართულ</h2><div>Georgian</div>"
+                [options]="{placement: 'bottom'}"></span>
+            <span *ngIf="isEnglishLocalized"  class="flag-icon flag-icon-ru" [ngClass]="russianSelected ? 'selected-flag': ''"
+                (click)="switchToRussian()" tooltip="<h2>Русский</h2><div>Russian</div>"
+                [options]="{placement: 'bottom'}"></span>
+
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,38 @@
+<div id="navBar" [style.background-color]="currentBackgroundColor">
+    <a href="landing">
+        <span id="logo">
+            <img src="./../../assets/langBridgeDarkTheme.svg">
+        </span>
+    </a>
+    <a class="icon" href="https://lang-bridge.com">
+        <span class="icon flag-icon flag-icon-us"></span>
+    </a>
+    <a class="icon" href="https://es.lang-bridge.com">
+        <span class="icon flag-icon flag-icon-es"></span>
+    </a>
+    <span id="spacer"></span>
+
+    
+    <span class="icon" *ngIf="loggedIn">
+        <a href="stats">
+            <i class="fa fa-chart-line"></i>
+        </a>
+    </span>
+    <span class="icon" *ngIf="loggedIn">
+        <a href="learn">
+            <i class="fa fa-university"></i>
+        </a>
+    </span>
+    <span class="icon" *ngIf="loggedIn">
+        <a href="profile">
+            <i class="fas fa-user"></i>
+        </a>
+    </span>
+    
+    <span id="loginSpace" *ngIf="!loggedIn" (click)="goToLogin()">
+        <span id="loginButton">
+            <a id="loginButtonText" i18n="@@LOGIN">Login</a>
+        </span>
+    </span>
+
+</div>

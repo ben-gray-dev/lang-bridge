@@ -1,0 +1,74 @@
+<div id="root">
+
+    <div id="sidePanel">
+        <div id="langListWrapper" *ngIf="language && languagesLearning">
+            <span *ngIf="isSpanishLocalized && languagesLearning.indexOf(englishSpanishStr) != -1" class="flag-icon flag-icon-us" [ngClass]="englishSpanishSelected ? 'selected-flag': ''"
+                (click)="switchToEnglishSpanish()" tooltip="<h2>English</h2><div>Inglés</div>"
+                [options]="{placement: 'right'}"></span>
+            <span class="flag-icon flag-icon-br" [ngClass]="portugueseSelected ? 'selected-flag': ''"
+                *ngIf="isEnglishLocalized && languagesLearning.indexOf(portugueseStr) != -1" tooltip="<h2>Português</h2><div>Portuguese</div>"
+                (click)="switchToPortuguese()" tooltip="<h2>Português</h2><div>Portuguese</div>"
+                [options]="{placement: 'right'}"></span>
+            <span class="flag-icon flag-icon-ge" [ngClass]="georgianSelected ? 'selected-flag': ''"
+                (click)="switchToGeorgian()" *ngIf="isEnglishLocalized && languagesLearning.indexOf(georgianStr) != -1"  tooltip="<h2>ქართულ</h2><div>Georgian</div>"
+                [options]="{placement: 'right'}"></span>
+            <span class="flag-icon flag-icon-ru" [ngClass]="russianSelected ? 'selected-flag': ''"
+                (click)="switchToRussian()" *ngIf="isEnglishLocalized && languagesLearning.indexOf(russianStr) != -1" tooltip="<h2>Русский</h2><div>Russian</div>"
+                [options]="{placement: 'right'}"></span>
+            <span class="flag-icon flag-icon-fr" [ngClass]="frenchSelected ? 'selected-flag': ''"
+                (click)="switchToFrench()" *ngIf="isEnglishLocalized && languagesLearning.indexOf(frenchStr) != -1" tooltip="<h2>Français</h2><div>French</div>"
+                [options]="{placement: 'right'}"></span>
+            <span class="flag-icon flag-icon-es" [ngClass]="spanishSelected ? 'selected-flag': ''"
+                (click)="switchToSpanish()" *ngIf="isEnglishLocalized && languagesLearning.indexOf(spanishStr) != -1" tooltip="<h2>Español</h2><div>Spanish</div>"
+                [options]="{placement: 'right'}"></span>
+            <span class="flag-icon flag-icon-ir" [ngClass]="persianSelected ? 'selected-flag': ''"
+                (click)="switchToPersian()" *ngIf="isEnglishLocalized && languagesLearning.indexOf(persianStr) != -1" tooltip="<h2>فارسی</h2><div>Persian</div>"
+                [options]="{placement: 'right'}"></span>
+            <span class="add-lang" (click)="addNewLang()"><i class="far fa-plus-square"
+                    *ngIf="languagesLearning.length < NUM_LANGUAGES_OFFERED"></i></span>
+        </div>
+
+    </div>
+
+    <div class="centerPanel" id="loadingSpinner" *ngIf="!currentWordList && language">
+        <mat-spinner></mat-spinner>
+    </div>
+    <div class="centerPanel" id="learnPanel" *ngIf="!language || currentWordList">
+        <div id="langSelectContainer" *ngIf="!language && showLanguageSelection">
+            <app-lang-select (langSelected)="onSelection($event)" [langsAlreadySelected]="languagesLearning">
+            </app-lang-select>
+        </div>
+        <div id="flashCardContainer" ng-style="{'width': calc(flashCardWidth + ' + ' + max('10vw', 300px))}"
+            *ngIf="language">
+            <div id="back" class="direction" (click)="previousWord()"
+                [ngClass]="currentWordListCursor === 0 ? 'disabled': ''">
+                <i class="fas fa-chevron-left"></i>
+            </div>
+            <app-flashcard [width]="flashCardWidth" [height]="flashCardHeight"
+                [viewingWord]="currentWordList[currentWordListCursor]" [answerSize]="currentWordRenderedSize"
+                [rtl]="isLangRTL(language)" [keyboardLocale]="getLangKeyboardLocale(language)" #flashcard (guess)="onGuess($event)"
+                (nextWordNeeded)="nextWord()" (prevWordNeeded)="previousWord()" (readSentenceAloud)="previousReadManager()">
+            </app-flashcard>
+            <div id="forward" class="direction" (click)="nextWord()" [ngClass]="currentWordListCursor != furthestWordListCursor || isCorrectAnswer ? '': 'disabled'">
+                <i class="fas fa-chevron-right"></i>
+            </div>
+        </div>
+        <div id="definitions" *ngIf="language && currentWordList && currentWordList[currentWordListCursor]">
+            <div id="defWrapper">
+                <span>{{ currentWordList[currentWordListCursor].exampleInfo.target }}</span>
+            </div>
+            <div id="posWrappers">
+                <span>
+                    {{ currentWordList[currentWordListCursor].definition.pos }}
+                </span>
+            </div>
+        </div>
+        <div id="centerBottomSpacer"></div>
+
+
+    </div>
+
+    <div id="rightSidePanel">
+
+    </div>
+</div>

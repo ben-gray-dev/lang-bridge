@@ -1,0 +1,55 @@
+<div id="parent">
+    <div id="loadingSpinner" *ngIf="!profileInfo" >
+        <mat-spinner></mat-spinner>
+    </div>
+    <div id="profileCardContainer" *ngIf="profileInfo as pInfo">
+        <mat-card id="title">
+            <mat-card id="innerTitle">
+                <div id="titleText">
+                    <span i18n="@@USER_PROFILE">User Profile</span>
+                </div>
+            </mat-card>
+        </mat-card>
+        <mat-card id="form">
+            <form id="contactForm" [formGroup]="editInfoFormCtl">
+                <mat-form-field id="emailinput" class="email-form-option" appearance="outline">
+                    <mat-label i18n="@@EMAIL">Email</mat-label>
+                    <input matInput spellcheck="false" formControlName="email" autocomplete="off">
+                    <mat-error *ngIf="editInfoFormCtl.get('email').hasError('email')" i18n="@@INVALID_EMAIL_WARNING">
+                        Please enter a valid email address.
+                    </mat-error>
+                    <mat-error *ngIf="editInfoFormCtl.get('email').hasError('required')" i18n="@@EMAIL_REQUIRED_FIELD">
+                        Email is a required field.
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field id="nameinput" class="email-form-option" appearance="outline">
+                    <mat-label i18n="@@NAME">Name</mat-label>
+                    <input matInput spellcheck="false" formControlName="name" autocomplete="off">
+                    <mat-error i18n="@@NAME_REQUIRED_FIELD">
+                        Name is a required field.
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field id="bioInput" class="email-form-option" appearance="outline">
+                    <mat-label>Bio</mat-label>
+                    <input matInput spellcheck="false" formControlName="bio" autocomplete="off">
+                </mat-form-field>
+
+                <mat-form-field class="email-form-option" appearance="outline">
+                    <mat-label i18n="@@LAST_LOGIN">Last login</mat-label>
+                    <input matInput spellcheck="false" autocomplete="off" formControlName="lastLogIn">
+                </mat-form-field>
+            </form>
+        </mat-card>
+        <mat-card id="submission">
+            <button mat-button (click)="onSave()" [disabled]="saveDisabled" i18n="@@SAVE">Save</button>
+        </mat-card>
+    </div>
+    <div id="messageContainer">
+        <div id="statusMessage" class="message" *ngIf="statusMessage">
+            <span>{{ statusMessage }}</span>
+        </div>
+        <div id="errorMessage" class="message" *ngIf="errorMessage">
+            <span>{{ errorMessage }}</span>
+        </div>
+    </div>
+</div>

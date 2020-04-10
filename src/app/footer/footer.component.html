@@ -1,0 +1,82 @@
+<div id="footer">
+    <div class="topLevelWrapper">
+        <div class="topLevel" id="sitemapLinks" [ngClass]="verticalDisplay ? 'verticalSiteMap' : 'horizontalSiteMap'">
+            <div class="lineItem">
+                <div class="linkListTitle">
+                    <span i18n="@@ABOUT">About</span>
+                </div>
+                <div class="linkList">
+                    <span><a href="/landing" i18n="@@LANDING_PAGE">Landing Page</a></span>
+                    
+                </div>
+                <div class="linkList">
+                    <span><a href="/terms-of-service" i18n="@@TERMS_OF_SERVICE">Terms of Service</a></span>
+                    
+                </div>
+                <div class="linkList">
+                    <span><a href="/privacy" i18n="@@PRIVACY_POLICY">Privacy Policy</a></span>
+                    
+                </div>
+            </div>
+            <div class="lineItem">
+                <div class="linkListTitle" i18n="@@MY_LANGBRIDGE">
+                    My LangBridge
+                </div>
+                <div class="linkList">
+                    <span><a href="/login" i18n="@@LOGIN">Login</a></span>
+                    
+                </div>
+                <div class="linkList">
+                    <span><a href="/register" i18n="@@SIGN_UP">Sign Up</a></span>
+                    
+                </div>
+                <div class="linkList">
+                    <span><a href="/profile" i18n="@@MY_PROFILE">My Profile</a></span>
+                    
+                </div>
+            </div>
+            <div class="lineItem">
+                <div class="linkListTitle" i18n="@@LEARNING_RESOURCES">
+                    Learning Resources
+                </div>
+                <div class="linkList">
+                    <span><a href="/learn" i18n="@@LEARNING">Learning</a></span>
+                    
+                </div>
+                <div class="linkList">
+                    <span><a href="/stats" i18n="@@PROGRESS">Progress</a></span>
+                    
+                </div>
+                <div class="linkList">
+                    <span><a href="/learn" i18n="@@SELECT_LANGUAGE">Select Language</a></span>
+                    
+                </div>
+            </div>
+            
+        </div>
+        <mat-divider [vertical]="true"></mat-divider>
+        <div class="topLevel" id="contactLinks">
+            <div id="contactBeforeSpacer" [ngClass]="verticalDisplay ? 'verticalContactSpacer' : 'horizontalContactSpacer'">
+
+            </div>
+            <div id="contactIconContainer" [ngClass]="verticalDisplay ? 'verticalIcons' : 'horizontalIcons'">
+                <a class="contactIcon" href="mailto:contactus@lang-bridge.com">
+                    <i class="fa fa-envelope"></i>
+                </a>
+                <!-- <a class="contactIcon" href="https://www.instagram.com/lang_bridge_official">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a class="contactIcon" href="https://twitter.com/lang_bridge">
+                    <i class="fab fa-twitter"></i>
+                </a> -->
+                <a class="contactIcon" href="mailto:contactus@lang-bridge.com">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+            <div id="contactAfterSpacer">
+
+            </div>
+        </div>
+    </div>
+    
+</div>

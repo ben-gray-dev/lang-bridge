@@ -1,0 +1,38 @@
+<mat-card id="head" [ngStyle]="{ 'width': width, 'height': height }" *ngIf="viewingWord">
+    <div class="cardComponent" id="exampleSentenceWrapper">
+        <div id="sentenceContainer">
+            <span dir="{{ rtl ? 'rtl' : 'ltr' }}">{{ viewingWord.exampleSentence.leadingLemma }}
+                <mat-form-field id="answerBox" [ngStyle]="{'width': answerSize + 'px' }"
+                    appearance="none" *ngIf="viewingWord.guessedCorrectly">
+                    <input #correctAnswer type="text" class="correct" id="answerHere" matInput [(ngModel)]="viewingWord.lemma" (keyup.enter)="wordIsGuessed()" (keyup.arrowleft)="previousWord()" (keyup.arrowright)="nextWord()" autofocus>
+                </mat-form-field>
+                <mat-form-field id="answerBox" [ngStyle]="{'width': answerSize + 'px' }"
+                    appearance="none" *ngIf="!viewingWord.guessedCorrectly" class="editable" [attr.data-placeholder]="!viewingWord.guessedCorrectly && viewingWord.wasGuessed ? viewingWord.lemma: ''">
+                    <input #answer type="text"  id="answerHere" matInput [(ngModel)]="wordGuess" [matKeyboard]="keyboardLocale"(keyup.enter)="wordIsGuessed()" (keyup.arrowleft)="previousWord()" (keyup.arrowright)="nextWord()" autofocus autocomplete="off">
+                </mat-form-field>
+                {{ viewingWord.exampleSentence.trailingLemma }}
+            </span>
+        </div>
+    </div>
+    <div class="cardComponent" id="translationPartition">
+        <mat-divider></mat-divider>
+    </div>
+    <div class="cardComponent" id="translatedSentence">
+        <div id="translationWrapper">
+            <span>
+                {{ viewingWord.exampleSentence.translation }}
+            </span>
+        </div>
+    </div>
+    <div class="cardComponent" id="bottomIconContainer">
+        <span class="bottomIcon"><i class="fas fa-keyboard" (click)="toggleKeyboard()"></i></span>
+        <span id="iconSpacer"></span>
+        
+        
+        <span class="bottomIcon"><i class="fas fa-flag" (click)="reportProblem()"></i></span>
+        <mat-icon class="bottomIcon" (click)="readSentence()">record_voice_over</mat-icon>
+        <span class="bottomIcon" *ngIf="!isMuted"><i class="fas fa-volume-up" (click)="mute()"></i></span>
+        <span class="bottomIcon" *ngIf="isMuted"><i class="fas fa-volume-mute" (click)="mute()"></i></span>
+
+    </div>
+</mat-card>

@@ -1,0 +1,80 @@
+@import './assets/animate.css';
+/* You can add global styles to this file, and also import other style files */
+body {
+    margin: 0;
+    background-color: #999999;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+  }
+
+* {
+    font-family: 'Strait';
+}
+html, body { height: 100%; }
+body { margin: 0 }
+
+
+
+.animated-delay-1 {
+    animation-delay: 1s;
+    -webkit-animation-delay: 1s;
+    -moz-animation-delay: 1s;
+    -o-animation-delay: 1s;
+}
+
+.animated-delay-2 {
+    animation-delay: 2s;
+    -webkit-animation-delay: 2s;
+    -moz-animation-delay: 2s;
+    -o-animation-delay: 2s;
+}
+
+.animated {
+    visibility: visible !important;
+}
+.hide-on-init {
+    visibility: hidden !important;
+}
+
+
+mat-card#title, mat-card.title {
+    display: flex;
+    margin: auto;
+    margin-bottom: 2vh;
+    width: max(25vw, 400px);
+    height: 6vh;
+    background-color: #424242 !important;  
+    flex-direction: column;
+}
+
+mat-card#innerTitle, mat-card.innerTitle {
+    background-color: white;
+    color: #424242;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    width: 90%;
+    height: 80%;
+
+    div#titleText, div.titleText {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        margin: auto;
+
+        span {
+            font-size: 2.5vh;
+        }
+    }
+
+    * {
+        display: flex;
+        flex-direction: row;
+        margin: auto;
+    }
+}

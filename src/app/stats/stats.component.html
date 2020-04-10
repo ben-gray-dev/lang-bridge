@@ -1,0 +1,40 @@
+<div id="root">
+    <div id="sidePanel">
+        <div id="langListWrapper" *ngIf="language && languagesLearning">
+            <span class="flag-icon flag-icon-us" [ngClass]="englishSpanishSelected ? 'selected-flag': ''"
+                (click)="switchToEnglishSpanish()" *ngIf="isSpanishLocalized && languagesLearning.indexOf(englishSpanishStr) != -1" tooltip="<h2>English</h2><div>Inglés</div>"
+                [options]="{placement: 'right'}"></span>
+            <span class="flag-icon flag-icon-br" [ngClass]="portugueseSelected ? 'selected-flag': ''"
+                (click)="switchToPortuguese()" *ngIf="isEnglishLocalized && languagesLearning.indexOf(portugueseStr) != -1" tooltip="<h2>Português</h2><div>Portuguese</div>"
+                [options]="{placement: 'right'}"></span>
+            <span class="flag-icon flag-icon-ge" [ngClass]="georgianSelected ? 'selected-flag': ''"
+                (click)="switchToGeorgian()" *ngIf="isEnglishLocalized && languagesLearning.indexOf(georgianStr) != -1"  tooltip="<h2>ქართულ</h2><div>Georgian</div>"
+                [options]="{placement: 'right'}"></span>
+            <span class="flag-icon flag-icon-ru" [ngClass]="russianSelected ? 'selected-flag': ''"
+                (click)="switchToRussian()" *ngIf="isEnglishLocalized && languagesLearning.indexOf(russianStr) != -1" tooltip="<h2>Русский</h2><div>Russian</div>"
+                [options]="{placement: 'right'}"></span>
+            <span class="flag-icon flag-icon-fr" [ngClass]="frenchSelected ? 'selected-flag': ''"
+                (click)="switchToFrench()" *ngIf="isEnglishLocalized && languagesLearning.indexOf(frenchStr) != -1" tooltip="<h2>Français</h2><div>French</div>"
+                [options]="{placement: 'right'}"></span>
+            <span class="flag-icon flag-icon-es" [ngClass]="spanishSelected ? 'selected-flag': ''"
+                (click)="switchToSpanish()" *ngIf="isEnglishLocalized && languagesLearning.indexOf(spanishStr) != -1" tooltip="<h2>Español</h2><div>Spanish</div>"
+                [options]="{placement: 'right'}"></span>
+            <span class="flag-icon flag-icon-ir" [ngClass]="persianSelected ? 'selected-flag': ''"
+                (click)="switchToPersian()" *ngIf="isEnglishLocalized && languagesLearning.indexOf(persianStr) != -1" tooltip="<h2>فارسی</h2><div>Persian</div>"
+                [options]="{placement: 'right'}"></span>
+        </div>
+
+    </div>
+    <div class="centerPanel" id="loadingSpinner" *ngIf="!language || loadingStats">
+        <mat-spinner></mat-spinner>
+    </div>
+    <div class="centerPanel" id="statsInfo" *ngIf="language && !loadingStats">
+        <div>
+            <td-chart class="graph" [style.height.px]="screenHeight/1.2" [style.width.px]="screenWidth/1.2 - 100" [config]="histogramFrequencies" [renderer]="'canvas'"></td-chart>
+        </div>
+    </div>
+    <div id="rightSidePanel">
+
+    </div>
+</div>
+

@@ -1,0 +1,36 @@
+<div id="langSelectContainer">
+    <mat-card id="title">
+        <mat-card id="innerTitle">
+            <div id="titleText">
+                <span i18n="@@SELECT_LANGUAGE">Select a language</span>
+            </div>
+        </mat-card>
+    </mat-card>
+    <div id="titleSpacer">
+
+    </div>
+    <div id="langViewer">
+        <div id="langSelectorWrapper">
+            <div class="langRow" id="langListWrapper">
+                <span class="flag-icon flag-icon-us" (click)="selectEnglishSpanish()" *ngIf="isSpanishLocalized && showLang['englishSpanish']"></span>
+                <span class="flag-icon flag-icon-es" (click)="selectSpanish()" *ngIf="isEnglishLocalized && showLang['spanish']"></span>
+                <span class="flag-icon flag-icon-br" (click)="selectPortuguese()" *ngIf="isEnglishLocalized && showLang['portuguese']"></span>
+                <span class="flag-icon flag-icon-ir" (click)="selectPersian()" *ngIf="isEnglishLocalized && showLang['persian']"></span>
+                <span class="flag-icon flag-icon-fr" (click)="selectFrench()" *ngIf="isEnglishLocalized && showLang['french']"></span>
+                <span class="flag-icon flag-icon-ru" (click)="selectRussian()" *ngIf="isEnglishLocalized && showLang['russian']"></span>
+                <span class="flag-icon flag-icon-ge" (click)="selectGeorgian()" *ngIf="isEnglishLocalized && showLang['georgian']"></span>
+                
+            </div>
+        </div>
+        <div class="langRow" id="langTitleContainer">
+            <span class="lang-title" *ngIf="isSpanishLocalized && showLang['englishSpanish']">English</span>
+            <span class="lang-title" *ngIf="isEnglishLocalized && showLang['spanish']">Español</span>
+            <span class="lang-title" *ngIf="isEnglishLocalized && showLang['portuguese']">Português</span>
+            <span class="lang-title" *ngIf="isEnglishLocalized && showLang['persian']">فارسی</span>
+            <span class="lang-title" *ngIf="isEnglishLocalized && showLang['french']">Français</span>
+            <span class="lang-title" *ngIf="isEnglishLocalized && showLang['russian']">Русский</span>
+            <span class="lang-title" *ngIf="isEnglishLocalized && showLang['georgian']">ქართულ</span>
+        </div>
+
+    </div>
+</div>

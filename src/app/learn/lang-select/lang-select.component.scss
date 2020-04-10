@@ -1,0 +1,84 @@
+div.langRow, div#langListWrapper {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    span.flag-icon, span.lang-title {
+        width: max(4vw, 80px);
+        margin: max(2vw, 40px);
+        font-size: max(4vw, 80px);
+        border-radius: 1em;
+        opacity: 1;
+    }
+
+    span.lang-title {
+        font-size: max(1vw, 20px);
+        text-align: center;
+    }
+    
+}
+
+div#langTitleContainer {
+    margin-top: -5vh;
+    height: 10vh;
+}
+
+div#langViewer {
+    display: flex;
+    flex-direction: column;
+}
+
+div#langSelectorWrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+div#langSelectContainer {
+    width: 90vw;
+    height: 30vh;
+}
+
+
+div#titleSpacer {
+    height: 2vh;
+}
+mat-card {
+    color: white;
+    background-color: #424242;
+    display: flex;
+    flex-direction: column;
+}
+
+mat-card#title {
+    display: flex;
+    margin: auto;
+    margin-bottom: 2vh;
+    width: max(25vw, 400px);
+    height: 6vh;
+}
+
+mat-card#innerTitle {
+    background-color: white;
+    color: #424242;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    width: 90%;
+    height: 80%;
+
+    div#titleText {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        margin: auto;
+
+        span {
+            font-size: 2.5vh;
+        }
+    }
+
+    * {
+        display: flex;
+        flex-direction: row;
+        margin: auto;
+    }
+}

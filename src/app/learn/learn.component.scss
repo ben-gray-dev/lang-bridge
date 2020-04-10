@@ -1,0 +1,86 @@
+* {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+}
+
+div.direction {
+    color: #e1b0e8;
+    font-size: 8vh;
+
+   
+}
+
+.disabled {
+    opacity: 0.2;
+}
+
+div#back {
+    margin-right: 2vw;
+}
+div#forward {
+    margin-left: 2vw;
+}
+
+div.centerPanel {
+    flex-direction: column;
+    width: 90%;
+    height: 100vh;
+
+    ::ng-deep .mat-progress-spinner circle, .mat-spinner circle {
+        stroke: #e1b0e8;
+    }
+}
+
+div#centerBottomSpacer {
+    height: 1vh;
+}
+
+div#sidePanel, div#rightSidePanel {
+    width: 10%;
+    height: 100vh;
+    flex-direction: column;
+
+    span.add-lang, span.flag-icon {
+        margin: 1vh;
+        font-size: max(2vw, 38px);
+        border-radius: 1em;
+        opacity: 0.4;
+        filter: grayscale(.2)
+    }
+
+    span.add-lang {
+        font-size: max(2.1vw, 38px);
+        color: white;
+    }
+
+    span.selected-flag {
+        opacity: 1;
+        filter: grayscale(0)
+    }
+
+    div#langListWrapper {
+        margin-top: 10vh;
+        flex-direction: column;
+    }
+}
+
+
+div#flashCardContainer {
+    margin-bottom: 1vh;
+}
+
+div#definitions {
+    margin-top: 1vh;
+    height: 5vh;
+
+    div#defWrapper {
+        display: inline;
+        width: 35vw;
+    }
+    span {
+        display: inline;
+        font-size: 4vh;
+        color: white;
+    }
+}
